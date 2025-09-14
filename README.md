@@ -29,6 +29,39 @@ It was adapted for **ECE444 – PRA-1: Front-End Design**.
 
 :star: Star me on GitHub — it helps!
 
+--- 
+# PRA-1: Front-End Design
+
+## Activity 1
+Repo after README update:
+![Activity 1 Repo Screenshot](screenshots/activity_1_screenshot.png)
+
+## Activity 2
+Repo (after personal info + deploy):
+![Activity 2 Repo](screenshots/activity2-repo.png)
+
+Deployed homepage:
+![Activity 2 Live Site](screenshots/activity2-live.png)
+
+## Activity 3
+Repo:
+![Activity 3 Repo](screenshots/activity3-repo.png)
+
+Deployed homepage with new theme color:
+![Activity 3 Live](screenshots/activity3-live.png)
+
+## Activity 4
+Repo:
+![Activity 4 Repo](screenshots/activity4-repo.png)
+
+Deployed “Places travelled” page:
+![Activity 4 Live](screenshots/activity4-live.png)
+
+## Activity 5
+Recent Projects section:
+![Activity 5 Live](screenshots/activity5-live.png)
+
+
 ---
 
 ## Features 📋
