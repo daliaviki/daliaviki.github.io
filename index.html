@@ -460,6 +460,13 @@
   <div class="container">
     <div class="row">
 
+  <h4 class="brown-text light" style="margin-top:0">Recent Projects</h4>
+  <div id="recent-projects" class="row"></div>
+  <div class="center-align" style="margin:-10px 0 30px">
+    <a id="loadMoreBtn" class="btn waves-effect">Load More</a>
+  </div>
+
+
       <!-- Elcano -->
       <div class="col s12 m6 l6">
         <div class="card medium">
@@ -534,6 +541,8 @@
           </div>
         </div>
       </div>
+
+
 
 
           <!-- 1. Django Project -->
@@ -828,6 +837,119 @@
        })
      })
    </script>
+
+<script>
+  // Only the projects that should appear *after* clicking "Load More"
+  const PROJECTS = [
+    {
+      title: "Autonomous Farming Robot",
+      image: "/assets/img/autonomous_farming_robot.png",
+      link: null,
+      description: "Field robot for precision agriculture—row following, weed detection, and data logging.",
+      highlights: [
+        "Onboard camera + TensorFlow Lite pipeline for weed/crop detection",
+        "GPS/IMU waypoint navigation with obstacle avoidance; web teleop",
+        "ROS stack on Jetson; logs synced to a lightweight DB for analysis"
+      ],
+      date: "2025-01-10"
+    },
+    {
+      title: "Biomedical Robotics — Soft Gripper",
+      image: "/assets/img/biomedical_robotics.png",
+      link: null,
+      description: "Soft robotic end-effector with gentle grasping and a simple vision pipeline for targeting.",
+      highlights: [
+        "Compliant pneumatic gripper for tissue-safe handling",
+        "OpenCV color/shape localization for approach & grasp cues",
+        "Embedded control loop with force/pressure feedback"
+      ],
+      date: "2024-12-01"
+    }
+  ];
+
+  document.addEventListener("DOMContentLoaded", function () {
+    const projects = PROJECTS.slice().sort((a, b) => new Date(b.date) - new Date(a.date));
+    const container = document.getElementById("recent-projects");
+    const loadMoreBtn = document.getElementById("loadMoreBtn");
+
+    const BATCH_SIZE = 2; // load both on first click
+    let renderedCount = 0;
+
+    function makeCard(p) {
+      const col = document.createElement("div");
+      col.className = "col s12 m6 l6";
+
+      const card = document.createElement("div");
+      card.className = "card medium";
+
+      const imgWrap = document.createElement("div");
+      imgWrap.className = "card-image waves-effect waves-block waves-light";
+      const img = document.createElement("img");
+      img.className = "activator";
+      img.alt = p.title;
+      img.src = p.image;
+      img.style.width = "100%";
+      img.style.height = "100%";
+      imgWrap.appendChild(img);
+
+      const content = document.createElement("div");
+      content.className = "card-content";
+      const title = document.createElement("span");
+      title.className = "card-title activator teal-text hoverline";
+      title.innerHTML = `${p.title}<i class="mdi-navigation-more-vert right"></i>`;
+      const desc = document.createElement("p");
+      desc.textContent = p.description;
+      content.appendChild(title);
+      content.appendChild(desc);
+
+      const reveal = document.createElement("div");
+      reveal.className = "card-reveal";
+      const revealTitle = document.createElement("span");
+      revealTitle.className = "card-title grey-text";
+      revealTitle.innerHTML = '<small>Highlights</small><i class="mdi-navigation-close right"></i>';
+      const ul = document.createElement("ul");
+      p.highlights.forEach(h => {
+        const li = document.createElement("li");
+        li.textContent = h;
+        ul.appendChild(li);
+      });
+      reveal.appendChild(revealTitle);
+      reveal.appendChild(ul);
+
+      const action = document.createElement("div");
+      action.className = "card-action";
+      if (p.link) {
+        const a = document.createElement("a");
+        a.href = p.link;
+        a.target = "_blank";
+        a.className = "btn-floating btn-large waves-effect waves-light blue-grey tooltipped";
+        a.setAttribute("data-tooltip", "Open");
+        a.innerHTML = '<i class="fa fa-external-link"></i>';
+        action.appendChild(a);
+      }
+
+      card.appendChild(imgWrap);
+      card.appendChild(content);
+      card.appendChild(reveal);
+      card.appendChild(action);
+      col.appendChild(card);
+      return col;
+    }
+
+    function renderNextBatch() {
+      const next = projects.slice(renderedCount, renderedCount + BATCH_SIZE);
+      next.forEach(p => container.appendChild(makeCard(p)));
+      renderedCount += next.length;
+      if (renderedCount >= projects.length) loadMoreBtn.style.display = "none";
+    }
+
+    // IMPORTANT: Do NOT render on load.
+    // Only load when the button is clicked.
+    loadMoreBtn.addEventListener("click", renderNextBatch);
+  });
+</script>
+
+
  </body>
  
  </html>
