@@ -784,3 +784,20 @@ ul.side-nav.fixed li.logo{
 @media (max-width: 600px){
   .intro-hero { flex-direction: column; align-items: flex-start; gap: 16px; }
 }
+
+/* --- Places Travelled map --- */
+.map-embed {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 ratio */
+  height: 0;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0,0,0,.15);
+}
+.map-embed iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
