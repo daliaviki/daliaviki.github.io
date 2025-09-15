@@ -693,43 +693,52 @@ small {
   }
 }
 
-/* === THEME OVERRIDES: Indigo + Coral (non-destructive) === */
+/* === THEME OVERRIDES (Purple) === */
 :root{
-  --primary:#3F51B5;        /* indigo */
-  --primary-dark:#2C3A9E;   /* darker indigo */
-  --accent:#FF6F61;         /* coral */
+  --primary: #6C63FF;   /* buttons, headings */
+  --accent:  #9B5DE5;   /* hovers, highlights */
+  --dark:    #2E2A47;   /* text on light */
+  --light:   #F7F5FF;   /* section bg */
+  --link:    #5A54E8;   /* anchor default */
+  --link-h:  #9B5DE5;   /* anchor hover */
 }
 
-/* Links + hover underline */
-a{ color:var(--primary) !important; }
-a.hoverline:hover{ border-bottom:3px solid var(--primary-dark) !important; }
+/* links */
+a { color: var(--link) !important; }
+a.hoverline:hover { border-bottom: 3px solid var(--link-h) !important; }
 
-/* Headshot ring */
-.profile-pic{ border-color: rgba(63,81,181,.4) !important; } /* was teal rgba */
+/* “teal” classes from Materialize used by the template — re-skin them */
+.teal        { background-color: var(--primary) !important; }
+.teal-text   { color: var(--primary) !important; }
 
-/* Buttons */
-.readme{ color:var(--primary) !important; }
-.contactme:hover{ color:var(--primary) !important; background-color:#fff !important; }
+/* section headers and light section bg */
+h3.page-title.teal { background-color: var(--primary) !important; }
+#intro.section { background: var(--primary) repeat !important; }
+.overlay { background-color: rgba(0,0,0,0.35) !important; }
 
-/* Section title bars / “teal” utilities from template */
-.teal-text{ color:var(--primary) !important; }
-.teal{ background-color:var(--primary) !important; }
-
-/* Intro banner background (was mint green) */
-#intro.section{ background:#E8EAF6 repeat !important; }
-
-/* Side nav link color (was bright green) */
-ul.side-nav.fixed a{ color:var(--primary) !important; }
-
-/* Mobile menu icon color (was #009688) */
-nav a.button-collapse, nav a.button-collapse i{ color:var(--primary) !important; }
-
-/* Nice accent on hovers */
-.card-action a:hover,
-.btn:hover, .btn-large:hover, .btn-floating:hover{
-  background-color:var(--accent) !important;
-  color:#fff !important;
+/* side nav link color + active state */
+ul.side-nav.fixed a { color: var(--primary) !important; }
+ul.table-of-contents li:not(.logo) a.active,
+ul.table-of-contents li:not(.logo) a:hover {
+  background-color: #fafafa !important;
+  border-left: 3px solid var(--accent) !important;
 }
+
+/* buttons */
+.readme { background: #fff; color: var(--primary); border-color:#fff; }
+.contactme { color: #fff; border-color:#fff; }
+.contactme:hover { color: var(--primary); background-color:#fff; }
+
+/* accents in cards & links inside cards */
+.card li a { border-bottom: 2px solid var(--accent) !important; }
+
+/* profile pic border to match theme */
+.profile-pic { border: 6px solid rgba(108, 99, 255, 0.35) !important; }
+
+/* small aesthetic tweaks */
+body { color: var(--dark); }
+.section { background: transparent; }
+
 
 /* ensure profile image is visible in the side nav */
 ul.side-nav li.logo .profile-pic{
