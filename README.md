@@ -60,6 +60,7 @@ Deployed “Places travelled” page:
 ## Activity 5
 Recent Projects section:
 ![Activity 5 Live](screenshots/activity_5_projects.png)
+![Activity 5 Repo](screenshots/activity_5_repo.png)
 
 
 ---
