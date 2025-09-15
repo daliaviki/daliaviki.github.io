@@ -139,9 +139,8 @@ body {
   color: #009688;
 } */
 
-a {
-  color: #004d40;
-}
+a { color: #BDB3FF; }
+
 
 /* main blockqoute */
 
@@ -319,10 +318,8 @@ h3 {
   position: relative;
 } */
 
-#intro.section {
-  background: #a7ffeb repeat;
-  position: relative;
-}
+#intro.section { background: #3D368A; }
+
 
 #intro.section .container {
   color: white;
@@ -472,9 +469,8 @@ a.hoverline {
   border-bottom: 3px solid #24305e !important;
 } */
 
-a.hoverline:hover {
-  border-bottom: 3px solid #004d40 !important;
-}
+a.hoverline:hover { border-bottom: 3px solid #FFD700 !important; }
+
 
 #skills .card.large {
   height: 360px;
@@ -548,9 +544,8 @@ small {
 
 /* main .teal-text */
 
-.teal-text {
-  color: #008073 !important;
-}
+.teal-text { color: #BDB3FF !important; }
+
 
 /* .teal-text {
   color: #0b5e86 !important;
@@ -558,9 +553,8 @@ small {
 
 /* .teal */
 
-.teal {
-  background-color: #008073 !important;
-}
+.teal { background-color: #6E64D8 !important; }
+
 
 /* .teal {
   background-color: #00695c !important;
@@ -755,15 +749,38 @@ ul.side-nav.fixed li.logo{
   box-shadow: 0 8px 18px rgba(0,0,0,.25);
 }
 
-/* --- Read More button (yellow) --- */
 .readme{
-  background: #FFE082;      /* amber 200 */
-  border: 2px solid #FFE082;
-  color: #2E296E;           /* dark purple text */
+  position: relative;
+  padding: 11px 35px;
+  background: #FFD700;
+  color: #1f1f1f;
+  border: 2px solid #FFD700;
+  font-weight: 600;
+  font-size: 15px;
+  letter-spacing: 1px;
+  display: inline-block;
+  border-radius: 5px;
+}
+.readme:hover{
+  background: transparent;
+  color: #FFD700;
+  border-color: #FFD700;
 }
 
-.readme:hover{
-  background: #FFD54F;      /* amber 300 */
-  border-color: #FFD54F;
-  color: #2E296E;
+/* --- home hero + typed text --- */
+.typing { color: #FFD700 !important; text-shadow: none; }
+
+/* If the old sidebar headshot HTML still exists, hide it */
+.side-nav .profile-pic { display: none !important; }
+
+/* Headshot on the hero (used with .intro-hero / .hero-headshot in index.html) */
+.intro-hero { display: flex; align-items: center; gap: 28px; }
+.hero-headshot{
+  width: 120px; height: 120px; border-radius: 50%;
+  object-fit: cover;
+  border: 6px solid rgba(255,255,255,.35);
+  box-shadow: 0 8px 24px rgba(0,0,0,.25);
+}
+@media (max-width: 600px){
+  .intro-hero { flex-direction: column; align-items: flex-start; gap: 16px; }
 }
