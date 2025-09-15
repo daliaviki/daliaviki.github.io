@@ -38,10 +38,10 @@ Repo after README update:
 
 ## Activity 2
 Repo (after personal info + deploy):
-![Activity 2 Repo](screenshots/activity2-repo.png)
+![Activity 2 Repo](screenshots/activity_2_screenshot_repo.png)
 
 Deployed homepage:
-![Activity 2 Live Site](screenshots/activity2-live.png)
+![Activity 2 Live Site](screenshots/activity_2_screenshot_homepage.png)
 
 ## Activity 3
 Repo:
