@@ -734,3 +734,36 @@ ul.side-nav.fixed a{ color: var(--accent) !important; }
   box-shadow:0 6px 16px rgba(0,0,0,.25);
 }
 ul.side-nav.fixed li.logo{ padding:18px 30px 26px; }
+
+/* --- Sidebar headshot spacing fix --- */
+ul.side-nav.fixed li.logo{
+  /* give the avatar its own room so the next item doesn't overlap */
+  padding-top: 14px;
+  padding-bottom: 54px;   /* <-- extra space under the photo */
+  min-height: auto;
+}
+
+.profile-pic{
+  display: block;
+  width: 120px;
+  height: 120px;
+  margin: 6px auto 10px;  /* centered + small gap below */
+  border: 6px solid rgba(255,255,255,.60);
+  border-radius: 50% !important;
+  object-fit: cover;
+  overflow: hidden;
+  box-shadow: 0 8px 18px rgba(0,0,0,.25);
+}
+
+/* --- Read More button (yellow) --- */
+.readme{
+  background: #FFE082;      /* amber 200 */
+  border: 2px solid #FFE082;
+  color: #2E296E;           /* dark purple text */
+}
+
+.readme:hover{
+  background: #FFD54F;      /* amber 300 */
+  border-color: #FFD54F;
+  color: #2E296E;
+}
