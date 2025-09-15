@@ -45,21 +45,21 @@ Deployed homepage:
 
 ## Activity 3
 Repo:
-![Activity 3 Repo](screenshots/activity3-repo.png)
+![Activity 3 Repo](screenshots/activity_3_screenshot_repo.png)
 
 Deployed homepage with new theme color:
-![Activity 3 Live](screenshots/activity3-live.png)
+![Activity 3 Live](screenshots/activity_3_homepage.png)
 
 ## Activity 4
 Repo:
-![Activity 4 Repo](screenshots/activity4-repo.png)
+![Activity 4 Repo](screenshots/activity_4_repo.png)
 
 Deployed “Places travelled” page:
-![Activity 4 Live](screenshots/activity4-live.png)
+![Activity 4 Live](screenshots/activity_4_page.png)
 
 ## Activity 5
 Recent Projects section:
-![Activity 5 Live](screenshots/activity5-live.png)
+![Activity 5 Live](screenshots/activity_5_projects.png)
 
 
 ---

@@ -693,58 +693,44 @@ small {
   }
 }
 
-/* === THEME OVERRIDES (Purple) === */
+/* THEME OVERRIDES */
 :root{
-  --primary: #6C63FF;   /* buttons, headings */
-  --accent:  #9B5DE5;   /* hovers, highlights */
-  --dark:    #2E2A47;   /* text on light */
-  --light:   #F7F5FF;   /* section bg */
-  --link:    #5A54E8;   /* anchor default */
-  --link-h:  #9B5DE5;   /* anchor hover */
+  --bg: #5146B8;          /* hero purple */
+  --accent: #8E99F3;      /* link/icon indigo */
+  --accent-dark: #5C6BC0;
+  --on-bg: #FFFFFF;
+  --chip: rgba(255,255,255,.45);
 }
 
-/* links */
-a { color: var(--link) !important; }
-a.hoverline:hover { border-bottom: 3px solid var(--link-h) !important; }
+/* hero background */
+#intro.section{ background: var(--bg) repeat; }
 
-/* “teal” classes from Materialize used by the template — re-skin them */
-.teal        { background-color: var(--primary) !important; }
-.teal-text   { color: var(--primary) !important; }
-
-/* section headers and light section bg */
-h3.page-title.teal { background-color: var(--primary) !important; }
-#intro.section { background: var(--primary) repeat !important; }
-.overlay { background-color: rgba(0,0,0,0.35) !important; }
-
-/* side nav link color + active state */
-ul.side-nav.fixed a { color: var(--primary) !important; }
-ul.table-of-contents li:not(.logo) a.active,
-ul.table-of-contents li:not(.logo) a:hover {
-  background-color: #fafafa !important;
-  border-left: 3px solid var(--accent) !important;
+/* typing text (visible on purple) */
+#intro .typing{
+  color: #FFE082;                /* light amber */
+  text-shadow: 0 2px 6px rgba(0,0,0,.35);
+  font-weight: 400;
 }
 
-/* buttons */
-.readme { background: #fff; color: var(--primary); border-color:#fff; }
-.contactme { color: #fff; border-color:#fff; }
-.contactme:hover { color: var(--primary); background-color:#fff; }
+/* links + hover underline */
+a{ color: var(--accent); }
+a.hoverline:hover{ border-bottom: 3px solid var(--accent-dark) !important; }
 
-/* accents in cards & links inside cards */
-.card li a { border-bottom: 2px solid var(--accent) !important; }
+/* “teal” utility classes rethemed */
+.teal-text{ color: var(--accent) !important; }
+.teal{ background-color: var(--accent) !important; }
 
-/* profile pic border to match theme */
-.profile-pic { border: 6px solid rgba(108, 99, 255, 0.35) !important; }
+/* sidebar link color (was green) */
+ul.side-nav.fixed a{ color: var(--accent) !important; }
 
-/* small aesthetic tweaks */
-body { color: var(--dark); }
-.section { background: transparent; }
-
-
-/* ensure profile image is visible in the side nav */
-ul.side-nav li.logo .profile-pic{
-  margin: 0 !important;           /* cancel the negative margins */
-  display: block !important;
-  max-width: 130px;
-  height: auto;
-  border-radius: 50% !important;
+/* headshot centering (prevents the slide-down look) */
+.profile-pic{
+  display:block;
+  width:120px; height:120px;
+  margin: 10px auto;
+  border:6px solid var(--chip);
+  border-radius:50% !important;
+  object-fit:cover; overflow:hidden;
+  box-shadow:0 6px 16px rgba(0,0,0,.25);
 }
+ul.side-nav.fixed li.logo{ padding:18px 30px 26px; }
