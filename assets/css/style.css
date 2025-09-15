@@ -692,3 +692,50 @@ small {
     background-position-x: 30%;
   }
 }
+
+/* === THEME OVERRIDES: Indigo + Coral (non-destructive) === */
+:root{
+  --primary:#3F51B5;        /* indigo */
+  --primary-dark:#2C3A9E;   /* darker indigo */
+  --accent:#FF6F61;         /* coral */
+}
+
+/* Links + hover underline */
+a{ color:var(--primary) !important; }
+a.hoverline:hover{ border-bottom:3px solid var(--primary-dark) !important; }
+
+/* Headshot ring */
+.profile-pic{ border-color: rgba(63,81,181,.4) !important; } /* was teal rgba */
+
+/* Buttons */
+.readme{ color:var(--primary) !important; }
+.contactme:hover{ color:var(--primary) !important; background-color:#fff !important; }
+
+/* Section title bars / “teal” utilities from template */
+.teal-text{ color:var(--primary) !important; }
+.teal{ background-color:var(--primary) !important; }
+
+/* Intro banner background (was mint green) */
+#intro.section{ background:#E8EAF6 repeat !important; }
+
+/* Side nav link color (was bright green) */
+ul.side-nav.fixed a{ color:var(--primary) !important; }
+
+/* Mobile menu icon color (was #009688) */
+nav a.button-collapse, nav a.button-collapse i{ color:var(--primary) !important; }
+
+/* Nice accent on hovers */
+.card-action a:hover,
+.btn:hover, .btn-large:hover, .btn-floating:hover{
+  background-color:var(--accent) !important;
+  color:#fff !important;
+}
+
+/* ensure profile image is visible in the side nav */
+ul.side-nav li.logo .profile-pic{
+  margin: 0 !important;           /* cancel the negative margins */
+  display: block !important;
+  max-width: 130px;
+  height: auto;
+  border-radius: 50% !important;
+}
